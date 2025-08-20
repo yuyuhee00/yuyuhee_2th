@@ -1,9 +1,11 @@
 package com.example.repository;
 
+import com.example.model.Question;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AnswerRepository {
+public interface AnswerRepository extends JpaRepository<Question,Integer> {
 
     // TODO:
 }

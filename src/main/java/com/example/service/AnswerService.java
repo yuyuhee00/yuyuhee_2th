@@ -63,6 +63,6 @@ public class AnswerService {
 
         // TODO:
 
-        return null;
+        return 0;
     }
 }
