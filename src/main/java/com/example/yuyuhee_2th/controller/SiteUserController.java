@@ -1,7 +1,7 @@
-package com.example.controller;
+package com.example.yuyuhee_2th.controller;
 
-import com.example.model.UserCreateForm;
-import com.example.service.SiteUserService;
+import com.example.yuyuhee_2th.model.UserCreateForm;
+import com.example.yuyuhee_2th.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

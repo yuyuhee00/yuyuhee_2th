@@ -1,9 +1,9 @@
-package com.example.controller;
+package com.example.yuyuhee_2th.controller;
 
-import com.example.model.AnswerForm;
-import com.example.service.AnswerService;
-import com.example.service.QuestionService;
-import com.example.service.SiteUserService;
+import com.example.yuyuhee_2th.model.AnswerForm;
+import com.example.yuyuhee_2th.service.AnswerService;
+import com.example.yuyuhee_2th.service.QuestionService;
+import com.example.yuyuhee_2th.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.yuyuhee_2th;
 
 import jakarta.servlet.DispatcherType;
 import jakarta.servlet.http.HttpServletRequest;
@@ -56,17 +56,7 @@ public class SecurityConfig {
                         .logoutSuccessUrl("/")
                         .invalidateHttpSession(true));
         return http.build();
-
-//        @Bean
-//        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//            http.authorizeRequests((authorizeRequests) ->
-//                    authorizeRequests.anyRequest().permitAll());
-//
-//            http.csrf(AbstractHttpConfigurer::disable);
-//            return http.build();
-//        }
     }
-
 
     @Bean
     PasswordEncoder passwordEncoder() {

@@ -1,13 +1,11 @@
-package com.example.controller;
+package com.example.yuyuhee_2th.controller;
 
-import com.example.model.AnswerForm;
-import com.example.model.Question;
-import com.example.model.QuestionForm;
-import com.example.service.QuestionService;
-import com.example.service.SiteUserService;
+import com.example.yuyuhee_2th.model.AnswerForm;
+import com.example.yuyuhee_2th.model.QuestionForm;
+import com.example.yuyuhee_2th.service.QuestionService;
+import com.example.yuyuhee_2th.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +13,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor

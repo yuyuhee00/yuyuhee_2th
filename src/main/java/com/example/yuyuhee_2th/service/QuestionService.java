@@ -1,9 +1,9 @@
-package com.example.service;
+package com.example.yuyuhee_2th.service;
 
-import com.example.model.Answer;
-import com.example.model.Question;
-import com.example.model.SiteUser;
-import com.example.repository.QuestionRepository;
+import com.example.yuyuhee_2th.model.Answer;
+import com.example.yuyuhee_2th.model.Question;
+import com.example.yuyuhee_2th.model.SiteUser;
+import com.example.yuyuhee_2th.repository.QuestionRepository;
 import jakarta.persistence.criteria.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

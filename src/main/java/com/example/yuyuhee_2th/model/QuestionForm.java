@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.yuyuhee_2th.model;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;

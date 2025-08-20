@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.yuyuhee_2th.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

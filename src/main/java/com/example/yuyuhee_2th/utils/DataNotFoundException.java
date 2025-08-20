@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.yuyuhee_2th.utils;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
