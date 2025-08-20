@@ -3,19 +3,12 @@ package com.example.service;
 import com.example.model.Answer;
 import com.example.model.Question;
 import com.example.model.SiteUser;
+import com.example.repository.QuestionRepository;
 import jakarta.persistence.criteria.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import com.example.repository.QuestionRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -24,13 +17,10 @@ public class QuestionService {
     private final QuestionRepository questionRepository;
 
     public Page<Question> getList(int page, String kw) {
-        List<Sort.Order> sorts = new ArrayList<>();
-        sorts.add(Sort.Order.desc("createDate"));
-        Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
-        Specification<Question> spec = search(kw);
 
-        return this.questionRepository.findAll(spec, pageable);
-        //return this.questionRepository.findAllByKeyword(kw, pageable);
+        // TODO:
+
+        return null;
     }
     private Specification<Question> search(String kw) {
         return new Specification<>() {
@@ -55,38 +45,40 @@ public class QuestionService {
 
     // http://127.0.0.1:8081/question/list/2
     public Question getQuestionById(Integer id) {
-        return this.questionRepository.findById(id).orElse(null);
+
+        // TODO:
+
+        return null;
     }
 
     // http://127.0.0.1:8081/question/create
     public void create(String subject, String content, SiteUser user){
-        Question q = new Question();
-        q.setSubject(subject);
-        q.setContent(content);
-        q.setCreateDate(LocalDateTime.now());
-        q.setAuthor(user);
-        this.questionRepository.save(q);
+
+        // TODO:
+
     }
 
     public void modify(Question question, String subject, String content) {
-        question.setSubject(subject);
-        question.setContent(content);
-        question.setModifyDate(LocalDateTime.now());
-        this.questionRepository.save(question);
+
+        // TODO:
+
     }
 
     public void delete(Integer id) {
-        this.questionRepository.deleteById(id);
+
+        // TODO:
+
     }
 
     public void delete(Question question) {
-        this.questionRepository.delete(question);
+
+        // TODO:
     }
 
     public int vote(Question question, SiteUser siteUser) {
-        if (! question.getVoter().add(siteUser))
-            return question.getVoter().size();
 
-        return this.questionRepository.save(question).getVoter().size();
+        // TODO:
+
+        return 0;
     }
 }
