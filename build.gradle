@@ -72,6 +72,12 @@ dependencies {
 	// junit
 	testImplementation 'org.junit.jupiter:junit-jupiter'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Servlet spec (Using JSP + thymeleaf)
+	// 스프링 부트의 내장 톰캣이 JSP를 지원하도록 해주는 의존성
+	compileOnly 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+	implementation 'org.springframework.security:spring-security-taglibs'
 }
 
 

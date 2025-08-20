@@ -1,4 +1,4 @@
-package com.example.yuyuhee_2th;
+package com.example.yuyuhee_2th.config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.slf4j.Logger;
@@ -12,8 +12,6 @@ import org.springframework.context.annotation.PropertySource;
 import javax.sql.DataSource;
 
 @Configuration
-//@ComponentScan(basePackages = {"com.example.model", "com.example.repository", "com.example.service"})
-@ComponentScan
 @PropertySource("classpath:database.properties")
 public class BasicDataSourceConfig {
     private static Logger logger = LoggerFactory.getLogger(BasicDataSourceConfig.class);

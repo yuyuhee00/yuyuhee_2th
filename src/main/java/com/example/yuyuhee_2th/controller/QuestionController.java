@@ -1,11 +1,13 @@
 package com.example.yuyuhee_2th.controller;
 
+import com.example.yuyuhee_2th.model.Question;
 import com.example.yuyuhee_2th.model.AnswerForm;
 import com.example.yuyuhee_2th.model.QuestionForm;
 import com.example.yuyuhee_2th.service.QuestionService;
 import com.example.yuyuhee_2th.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,14 +25,19 @@ public class QuestionController {
 
     private final SiteUserService userService;
 
+    // http://127.0.0.1:8082/question/list
     @GetMapping("/list")
     public String questionList(Model model,
                                @RequestParam(value = "page", defaultValue = "0") int page,
                                @RequestParam(value = "kw", defaultValue = "") String kw) {
 
         // TODO:
+        Page<Question> paging = this.questionService.getList(page, kw);
+        model.addAttribute("paging", paging);
+        model.addAttribute("kw", kw);
 
-        return "/question_list";
+        // return "jsp_home";
+        return "jsp_question_list";
     }
 
     @GetMapping("/detail/{id}")

@@ -27,7 +27,7 @@
     </head>
     <body>
 
-        <jsp:include page="/WEB-INF/views/jsp/common/navbar.jsp" />
+        <jsp:include page="/WEB-INF/views/common/navbar.jsp" />
 
         <%--invoke 사용하여 외부에서 전달된 HTML요소를 사용한다--%>
         <jsp:invoke fragment="body_area"/>

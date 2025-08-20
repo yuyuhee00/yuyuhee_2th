@@ -1,4 +1,4 @@
-package com.example.yuyuhee_2th;
+package com.example.yuyuhee_2th.config;
 
 import jakarta.servlet.DispatcherType;
 import jakarta.servlet.http.HttpServletRequest;
