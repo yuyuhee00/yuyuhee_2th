@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.mysite.sbb.utils.LocalDateTimeToString" %>
-<%@ page import="com.mysite.sbb.CommonUtil" %>
+<%@ page import="com.example.utils.LocalDateTimeToString" %>
+<%@ page import="com.example.utils.CommonUtil" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
@@ -121,7 +121,7 @@
 
 		<!-- 답 변 작 성-->
 		<form name="answerForm" action="/answer/create/${question.id}" method="post" class="my-3">
-			<jsp:include page="/WEB-INF/views/jsp/common/jsp_form_errors.jsp" />
+			<jsp:include page="/WEB-INF/views/common/jsp_form_errors.jsp" />
 			<sec:authorize access="isAnonymous()">
 				<textarea class="form-control" name="content" rows="10" placeholder="로그인을 해주세요"></textarea>
 			</sec:authorize>

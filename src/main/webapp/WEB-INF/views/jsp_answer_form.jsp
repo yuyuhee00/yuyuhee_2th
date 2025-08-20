@@ -13,7 +13,7 @@
 		<h5 class="my-3 border-bottom pb-2"> 답 변 수 정 </h5>
 		<form name="answerForm" method="post">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-			<jsp:include page="/WEB-INF/views/jsp/common/jsp_form_errors.jsp" />
+			<jsp:include page="/WEB-INF/views/common/jsp_form_errors.jsp" />
 
 			<div class="mb-3">
 				<label for="content" class="form-label"> 내 용 </label>

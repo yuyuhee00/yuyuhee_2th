@@ -12,7 +12,7 @@
         <h5 class="my-3 border-bottom pb-2"> 질 문 등 록 </h5>
         <form name="questionForm" method="post">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-            <jsp:include page="/WEB-INF/views/jsp/common/jsp_form_errors.jsp" />
+            <jsp:include page="/WEB-INF/views/common/jsp_form_errors.jsp" />
             <div class="mb-3">
                 <label for="subject" class="form-label"> 제 목 </label>
                 <input type="text" name="subject" value="${questionForm.subject}" class="form-control" autocomplete="off" required maxlength="200">

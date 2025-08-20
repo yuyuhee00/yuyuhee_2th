@@ -18,7 +18,7 @@
         </div>
 
         <form name="userCreateForm" action="/user/signup" method="post">
-            <jsp:include page="/WEB-INF/views/jsp/common/jsp_form_errors.jsp" />
+            <jsp:include page="/WEB-INF/views/common/jsp_form_errors.jsp" />
             <div class="mb-3">
                 <label for="username" class="form-label"> 사 용 자 ID</label>
                 <input type="text" name="username" class="form-control">
