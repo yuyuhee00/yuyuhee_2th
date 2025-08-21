@@ -24,7 +24,6 @@ public class SiteUserService {
     public SiteUser getUser(String username) {
 
         // TODO:
-
-        return null;
+        this.siteUserRepository.findByUsername(username);
     }
 }

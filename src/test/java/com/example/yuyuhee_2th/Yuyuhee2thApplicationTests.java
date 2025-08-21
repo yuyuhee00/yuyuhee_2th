@@ -8,19 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 @SpringBootTest
 class Yuyuhee2thApplicationTests {
 
 	@Autowired
 	private QuestionRepository questionRepository;
-
-	@Test
-	void contextLoads() {
-		String test = "SONG";
-		assertEquals("SONG", test);
-	}
 
 	@Test
 	void testJpa() {
@@ -36,4 +28,5 @@ class Yuyuhee2thApplicationTests {
 		q2.setCreateDate(LocalDateTime.now());
 		this.questionRepository.save(q2); // 두 번 째 질 문 저 장
 	}
+
 }
