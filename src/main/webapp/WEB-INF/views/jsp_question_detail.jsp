@@ -75,7 +75,9 @@
 
 		<!-- 답 변 반 복 시 작-->
 		<c:forEach var="answer" items="${question.answerList}">
+			<!-- For Anker -->
 			<a id="answer_${answer.id}"></a>
+
 			<div class="card my-3">
 				<div class="card-body">
 					<div class="card-text">${commonUtil.markdown(answer.content)}</div>

@@ -76,7 +76,6 @@ public class QuestionController {
         }
 
         // TODO:
-
         SiteUser siteUser = this.userService.getUser(principal.getName());
         this.questionService.create(questionForm.getSubject(), questionForm.getContent(), siteUser);
         return "redirect:/question/list";
