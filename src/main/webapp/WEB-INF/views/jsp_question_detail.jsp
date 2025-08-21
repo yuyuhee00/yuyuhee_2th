@@ -40,7 +40,7 @@
 								<span>${question.author.username}</span>
 							</c:if>
 						</div>
-						<div>${convert.formattedDate(question.createDate)}</div>
+<%--						<div>${convert.formattedDate(question.createDate)}</div>--%>
 					</div>
 				</div>
 				<div class="my-3">

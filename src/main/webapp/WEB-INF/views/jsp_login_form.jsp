@@ -13,7 +13,7 @@
         <form action="/user/login" method="post">
             <div>
                 <c:if test="${param.error}">
-                    <div class="alert alert-danger">사 용 자 ID 또 는 비 밀 번 호 를 확 인 해 주 세 요 .</div>
+                    <div class="alert alert-danger">사 용 자 ID 또 는 비 밀 번 호 를 확 인 해 주 세 요.</div>
                 </c:if>
             </div>
             <div class="mb-3">

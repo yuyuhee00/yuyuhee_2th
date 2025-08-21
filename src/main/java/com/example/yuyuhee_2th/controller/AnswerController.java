@@ -58,7 +58,7 @@ public class AnswerController {
                                Principal principal) {
         // TODO:
         Answer answer = this.answerService.getAnswer(id);
-        if (answer.getAuthor().getUsername().equals(principal.getName())) {
+        if (!answer.getAuthor().getUsername().equals(principal.getName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정 권한이 없습니다.");
         }
         answerForm.setContent(answer.getContent());
@@ -77,7 +77,7 @@ public class AnswerController {
 
         // TODO:
         Answer answer = this.answerService.getAnswer(id);
-        if (answer.getAuthor().getUsername().equals(principal.getName())) {
+        if (!answer.getAuthor().getUsername().equals(principal.getName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정 권한이 없습니다.");
         }
         this.answerService.modify(answer, answerForm.getContent());
@@ -90,7 +90,7 @@ public class AnswerController {
                                Principal principal) {
         // TODO:
         Answer answer = this.answerService.getAnswer(id);
-        if (answer.getAuthor().getUsername().equals(principal.getName())) {
+        if (!answer.getAuthor().getUsername().equals(principal.getName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제 권한이 없습니다.");
         }
         this.answerService.delete(id);

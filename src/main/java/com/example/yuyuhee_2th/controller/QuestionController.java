@@ -44,10 +44,14 @@ public class QuestionController {
     }
 
     @GetMapping("/detail/{id}")
-    public String questionDetail(Model model, @PathVariable("id") Integer id, AnswerForm answerForm) {
-
+    public String questionDetail(Model model,
+                                 @PathVariable("id") Integer id) {
         // TODO:
-        Question question = questionService.getQuestionById(id);
+        Question question = this.questionService.getQuestionById(id);
+        if (question == null) {
+            return "jsp_question_list";
+        }
+
         model.addAttribute("question", question);
         return "jsp_question_detail";
     }
@@ -146,13 +150,11 @@ public class QuestionController {
                                Principal principal) {
         // TODO:
         Question question = questionService.getQuestionById(id);
-        if (!question.getAuthor().getUsername().equals(principal.getName())) {
+        if (question.getAuthor() != null && question.getAuthor().getUsername().equals(principal.getName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "추천 권한이 없습니다.");
         }
 
         SiteUser siteUser = this.userService.getUser(principal.getName());
-        this.questionService.vote(question, siteUser);
-        return null;
+        return Integer.toString(this.questionService.vote(question, siteUser));
     }
-
 }

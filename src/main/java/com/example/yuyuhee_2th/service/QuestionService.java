@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,38 +65,48 @@ public class QuestionService {
     public Question getQuestionById(Integer id) {
 
         // TODO:
-
-        return null;
+        return this.questionRepository.findById(id).orElse(null);
     }
 
     // http://127.0.0.1:8081/question/create
     public void create(String subject, String content, SiteUser user){
 
         // TODO:
-
+        Question question = new Question();
+        question.setSubject(subject);
+        question.setContent(content);
+        question.setCreateDate(LocalDateTime.now());
+        question.setAuthor(user);
+        this.questionRepository.save(question);
     }
 
     public void modify(Question question, String subject, String content) {
 
         // TODO:
-
+        question.setSubject(subject);
+        question.setContent(content);
+        question.setModifyDate(LocalDateTime.now());
+        this.questionRepository.save(question);
     }
 
     public void delete(Integer id) {
 
         // TODO:
-
+        this.questionRepository.deleteById(id);
     }
 
     public void delete(Question question) {
 
         // TODO:
+        this.questionRepository.delete(question);
     }
 
     public int vote(Question question, SiteUser siteUser) {
 
         // TODO:
+        if (! question.getVoter().add(siteUser))
+            return question.getVoter().size();
 
-        return 0;
+        return this.questionRepository.save(question).getVoter().size();
     }
 }
