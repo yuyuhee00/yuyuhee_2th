@@ -23,6 +23,12 @@
 ## 미비사(선택)항 or 막힌 부분
 - Spring WebMvc : Controller 에서 사용되는 파라미터들의 용도 파악
 - Spring Security 의 전반 적인 흐름
+- SiteUser Security 설정 부분
+- Paging 내부 파악
+
+## TODO:
+- JPA 가 지원하는 Native SQL 사용법 파악 
+- Repository 를 JPA 에서 JdbcTemplate 으로 변경
 
 ## UI/UX (화면 캡처본을 복사 붙여 넣기, url 주소 나오도록)
 - 게시글 리스트 페이지
