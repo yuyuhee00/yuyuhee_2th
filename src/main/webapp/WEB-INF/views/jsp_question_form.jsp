@@ -1,4 +1,4 @@
-%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
@@ -9,7 +9,7 @@
 
 <jsp:attribute name="body_area">
     <div class="container">
-        <h5 class="my-3 border-bottom pb-2"> 질 문 등 록 </h5>
+        <h5 class="my-3 border-bottom pb-2">질 문 등 록</h5>
         <form name="questionForm" method="post">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <jsp:include page="/WEB-INF/views/common/jsp_form_errors.jsp" />
