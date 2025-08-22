@@ -6,7 +6,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE>
 <html>
-    <nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">SBB</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
