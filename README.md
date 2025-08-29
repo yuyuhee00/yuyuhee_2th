@@ -37,3 +37,14 @@
 - 로그인 페이지 : ![Capture_4.png](src/main/resources/static/images/Capture_4.png)
 - 회원가입 페이지 : ![Capture_5.png](src/main/resources/static/images/Capture_5.png)
 - (선택) 검색 페이지 : ![Capture_6.png](src/main/resources/static/images/Capture_6.png)
+
+
+## Changed
+- To loing with email : because email is unique in database
+  . add : SiteUserRepository.findByEmail(String email)
+  . add : SiteUserController. @PostMapping("/login")
+  . change : UserSecurityService.loadUserByUsername(String email)
+  
+
+## BugFix
+- jsp_login_form.jsp : when login failed, add popup message. 
