@@ -42,9 +42,9 @@ public class SecurityConfig {
                         .addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)))
                 .formLogin((formLogin) -> formLogin
                         .loginPage("/user/login")
-                        .loginProcessingUrl("/user/login")
-                        .defaultSuccessUrl("/", true)
-                        // .failureUrl("/user/login?error=true")
+//                        .loginProcessingUrl("/user/login")
+//                        .defaultSuccessUrl("/", true)
+//                        // .failureUrl("/user/login?error=true")
                         .permitAll())
                 .logout((logout) -> logout
                         .logoutRequestMatcher(new RequestMatcher() {

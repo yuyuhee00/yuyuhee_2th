@@ -2,15 +2,20 @@ package com.example.yuyuhee_2th.controller;
 
 import ch.qos.logback.core.spi.ErrorCodes;
 import com.example.yuyuhee_2th.model.UserCreateForm;
+import com.example.yuyuhee_2th.security.UserSecurityService;
 import com.example.yuyuhee_2th.service.SiteUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -18,6 +23,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SiteUserController {
 
     private final SiteUserService userService;
+
+    private final UserSecurityService userSecurityService;
+    private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/signup")
     public String userSignup(UserCreateForm userCreateForm) {
@@ -62,5 +70,18 @@ public class SiteUserController {
 
         // TODO:
         return "jsp_login_form";
+    }
+
+    @PostMapping("/login")
+    public String userLogin(Model model,
+                            @RequestParam("email") String email,
+                            @RequestParam("password") String password) {
+        User user = (User) this.userSecurityService.loadUserByUsername(email);
+        if (user == null || !this.passwordEncoder.matches(password, user.getPassword())) {
+            model.addAttribute("error", "email or password is wrong.");
+            return "jsp_login_form";
+        }
+        // Successful login
+        return "redirect:/question/list";
     }
 }
